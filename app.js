@@ -32,6 +32,12 @@ new Vue({
         }
     },
 
+    watch: {
+        showPrices(newVal, oldVal) {
+            console.log(newVal, oldVal)
+        }
+    },
+
     methods: {
         toggleShowPrices() {
             this.showPrices = !this.showPrices
