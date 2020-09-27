@@ -1,44 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div id="app" v-bind:style="{ background: '#' + color }">
-        <img 
-            v-on:mouseover="toggleShowPrices" 
-            v-on:mouseout="toggleShowPrices" 
-            v-bind:src="img" v-bind:alt="name"
-        >
-        <h1 v-bind:class="changePercent > 0 ? 'green' : 'red'">
-            {{ title }}
-            <span v-if="changePercent > 0">🔥</span>
-            <span v-else-if="changePercent < 0">xd</span>
-            <span v-else>:v</span>
-            
-            <span v-on:click="toggleShowPrices">
-                {{ showPrices ? 'xd' : ':v' }}
-            </span>
-        </h1>
+  <!-- <div id="app" v-bind:style="{ background: '#' + color }">
+      <img 
+          v-on:mouseover="toggleShowPrices" 
+          v-on:mouseout="toggleShowPrices" 
+          v-bind:src="img" v-bind:alt="name"
+      >
+      <h1 v-bind:class="changePercent > 0 ? 'green' : 'red'">
+          {{ title }}
+          <span v-if="changePercent > 0">🔥</span>
+          <span v-else-if="changePercent < 0">xd</span>
+          <span v-else>:v</span>
+          
+          <span v-on:click="toggleShowPrices">
+              {{ showPrices ? 'xd' : ':v' }}
+          </span>
+      </h1>
 
-        <input type="number" v-model="value">
-        <span>{{ convertedValue }}</span>
-            
-        <ul v-show=showPrices>
-            <li
-                class="uppercase"
-                v-bind:class="{ orange : p.value == price, red: p.value < price, green: p.value > price }"
-                v-for="(p, i) in pricesWithDays" 
-                v-bind:key="p.day"
-            >
-                {{ i }} - {{ p.day }} - {{ p.value }}
-            </li>
-        </ul>
+      <input type="number" v-model="value">
+      <span>{{ convertedValue }}</span>
+          
+      <ul v-show=showPrices>
+          <li
+              class="uppercase"
+              v-bind:class="{ orange : p.value == price, red: p.value < price, green: p.value > price }"
+              v-for="(p, i) in pricesWithDays" 
+              v-bind:key="p.day"
+          >
+              {{ i }} - {{ p.day }} - {{ p.value }}
+          </li>
+      </ul>
+  </div> -->
+  
+  <div id="app">
+    <h1>
+      Mis Cursos de Platzi💚
+    </h1>
+      <p>
+        <input type="text" placeholder="Titulo del curso"/>
+      </p>
+      <p>
+        <input type="number" placeholder="Horas"/>
+      </p>
+      <p>
+        <button v-on:click="addCourse">Guardar Curso</button>
+      </p>
+    </fieldset>
+    <div>
+      <h3>Lista de Cursos</h3>
+      <p class="red" v-if="totalTime==0">Aun no has realizado cursos</p>
+      <div>
+        <ol>
+          <!-- Lista de cursos -->
+          <li v-for="course in courses">{{ course.title }} - {{ course.time }}</li>
+        </ol>
+        <hr/>
+        <p>
+          Llevo <strong>{{ totalTime }}</strong> horas aprendiendo en Platzi.
+          <b>#NuncaParesDeAprender 💚</b>
+        </p>
+      </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="app.js"></script>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
