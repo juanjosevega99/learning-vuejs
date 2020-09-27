@@ -8,6 +8,8 @@ new Vue({
             img: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png',
             changePercent: 0,
 
+            value: 0,
+
             color: 'f4f4f4',
 
             price: 8400,
