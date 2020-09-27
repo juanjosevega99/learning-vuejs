@@ -44,10 +44,10 @@
       Mis Cursos de Platzi💚
     </h1>
       <p>
-        <input type="text" placeholder="Titulo del curso"/>
+        <input type="text" v-model="title" placeholder="Titulo del curso"/>
       </p>
       <p>
-        <input type="number" placeholder="Horas"/>
+        <input type="number" v-model="time" placeholder="Horas"/>
       </p>
       <p>
         <button v-on:click="addCourse">Guardar Curso</button>
