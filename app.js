@@ -4,6 +4,7 @@ new Vue({
     data () {
         return {
             name: 'Bitcoin',
+            symbol: 'BTC',
             img: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png',
             changePercent: 0,
 
@@ -22,6 +23,12 @@ new Vue({
             ],
 
             showPrices: false
+        }
+    },
+
+    computed: {
+        title () {
+            return `${this.name} - ${this.symbol}`
         }
     },
 
