@@ -31,6 +31,14 @@ new Vue({
     computed: {
         title () {
             return `${this.name} - ${this.symbol}`
+        },
+
+        convertedValue() {
+            if (!this.value) {
+                return 0
+            }
+
+            return this.value / this.price
         }
     },
 
