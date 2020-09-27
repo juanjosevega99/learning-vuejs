@@ -1,4 +1,13 @@
-#app {
+html {
+  padding: 20px;
+  color: #3d3d3d;
+}
+
+.red {
+  color: tomato;
+}
+
+/* #app {
     font-family: sans-serif;
     flex-direction: column;
     padding: 20px;
@@ -51,4 +60,4 @@
   
   span {
     cursor: pointer;
-  }
+  } */
