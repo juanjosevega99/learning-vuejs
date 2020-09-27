@@ -1,4 +1,30 @@
 new Vue({
+  el: '#app',
+  
+  data () {
+    return {
+      courses: [],
+      title: '',
+      time: 0
+    }
+  },
+  
+  computed: {
+    totalTime() {
+      return this.courses.reduce((sum, s) => sum + parseInt(s.time), 0)
+    }
+  },
+  
+  methods: {
+    addCourse() {
+      this.courses.push({ title: this.title, time: this.time })
+      this.title = ""
+      this.time = 0
+    }
+  }
+})
+
+/* new Vue({
     el: '#app',
 
     data () {
@@ -56,4 +82,4 @@ new Vue({
                 .reverse().join('')
         }
     }
-})
+}) */
